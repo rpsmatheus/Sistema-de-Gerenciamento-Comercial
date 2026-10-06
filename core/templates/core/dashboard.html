@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Dashboard{% endblock %}
+
+{% block conteudo %}
+    <h1 class="text-2xl font-bold text-stone-900">Dashboard</h1>
+    <p class="mt-1 text-stone-600">
+        Visão geral do sistema. Escolha um módulo para começar.
+    </p>
+
+    <section class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {% for modulo in modulos %}
+            <article class="cartao-modulo">
+                <div class="flex items-start justify-between gap-2">
+                    <h2 class="text-lg font-semibold text-stone-900">{{ modulo.nome }}</h2>
+                    {% if modulo.disponivel %}
+                        <span class="etiqueta etiqueta-disponivel">Disponível</span>
+                    {% else %}
+                        <span class="etiqueta etiqueta-em-breve">Sprint {{ modulo.sprint }}</span>
+                    {% endif %}
+                </div>
+
+                <p class="mt-2 text-sm text-stone-600">{{ modulo.descricao }}</p>
+
+                {% if modulo.disponivel %}
+                    <a href="{% url modulo.url_name %}"
+                       class="mt-4 inline-block text-sm font-medium text-amber-800 hover:underline">
+                        Abrir módulo →
+                    </a>
+                {% else %}
+                    <p class="mt-4 text-sm text-stone-400">Em desenvolvimento</p>
+                {% endif %}
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}
