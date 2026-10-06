@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Início{% endblock %} · Pães Artesanais</title>
+
+    {# Tailwind CSS via CDN, como visto na disciplina #}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body class="flex min-h-screen flex-col bg-stone-50 text-stone-800">
+
+    {% include 'partials/navbar.html' %}
+
+    <main class="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
+
+        {# Mensagens de feedback (django.contrib.messages) #}
+        {% if messages %}
+            <div class="mb-6 space-y-2">
+                {% for message in messages %}
+                    <div class="mensagem mensagem-{{ message.tags }}" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% block conteudo %}{% endblock %}
+    </main>
+
+    <footer class="border-t border-stone-200 bg-white py-4 text-center text-sm text-stone-500">
+        Sistema de Gerenciamento Comercial e Produtivo · Programação Web · UFOP
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
