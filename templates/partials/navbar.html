@@ -4,21 +4,37 @@
             🍞 Pães Artesanais
         </a>
 
-        {# Botão do menu, visível apenas em telas pequenas #}
-        <button id="botao-menu" type="button"
-                class="rounded p-2 hover:bg-amber-700 md:hidden"
-                aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
-            ☰
-        </button>
+        {# O menu só aparece para quem está autenticado #}
+        {% if user.is_authenticated %}
+            {# Botão do menu, visível apenas em telas pequenas #}
+            <button id="botao-menu" type="button"
+                    class="rounded p-2 hover:bg-amber-700 md:hidden"
+                    aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                ☰
+            </button>
 
-        <ul id="menu-principal"
-            class="hidden w-full flex-col gap-1 pt-3 md:flex md:w-auto md:flex-row md:items-center md:gap-4 md:pt-0">
-            <li>
-                <a href="{% url 'dashboard' %}" class="block rounded px-3 py-2 hover:bg-amber-700">
-                    Dashboard
-                </a>
-            </li>
-            {# Os links dos módulos entram aqui conforme forem implementados #}
-        </ul>
+            <ul id="menu-principal"
+                class="hidden w-full flex-col gap-1 pt-3 md:flex md:w-auto md:flex-row md:items-center md:gap-4 md:pt-0">
+                <li>
+                    <a href="{% url 'dashboard' %}" class="block rounded px-3 py-2 hover:bg-amber-700">
+                        Dashboard
+                    </a>
+                </li>
+                {# Os links dos módulos entram aqui conforme forem implementados #}
+
+                <li class="px-3 py-2 text-sm text-amber-200 md:border-l md:border-amber-700 md:pl-4">
+                    Olá, {{ user.get_username }}
+                </li>
+                <li>
+                    {# No Django 5 o logout precisa ser enviado por POST #}
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="block w-full rounded px-3 py-2 text-left hover:bg-amber-700">
+                            Sair
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        {% endif %}
     </nav>
 </header>
