@@ -1,0 +1,24 @@
+<header class="bg-amber-800 text-amber-50 shadow">
+    <nav class="mx-auto flex max-w-6xl flex-wrap items-center justify-between px-4 py-3">
+        <a href="{% url 'dashboard' %}" class="text-lg font-semibold tracking-tight">
+            🍞 Pães Artesanais
+        </a>
+
+        {# Botão do menu, visível apenas em telas pequenas #}
+        <button id="botao-menu" type="button"
+                class="rounded p-2 hover:bg-amber-700 md:hidden"
+                aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+            ☰
+        </button>
+
+        <ul id="menu-principal"
+            class="hidden w-full flex-col gap-1 pt-3 md:flex md:w-auto md:flex-row md:items-center md:gap-4 md:pt-0">
+            <li>
+                <a href="{% url 'dashboard' %}" class="block rounded px-3 py-2 hover:bg-amber-700">
+                    Dashboard
+                </a>
+            </li>
+            {# Os links dos módulos entram aqui conforme forem implementados #}
+        </ul>
+    </nav>
+</header>
