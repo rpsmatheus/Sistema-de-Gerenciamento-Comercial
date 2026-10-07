@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import TemplateView
 
 # Módulos do sistema exibidos no dashboard.
@@ -56,8 +57,12 @@ MODULOS = [
 ]
 
 
-class DashboardView(TemplateView):
-    """Página inicial do sistema, com atalhos para os módulos."""
+class DashboardView(LoginRequiredMixin, TemplateView):
+    """Página inicial do sistema, com atalhos para os módulos.
+
+    O LoginRequiredMixin redireciona para a tela de login quem não
+    estiver autenticado. Use o mesmo mixin em todas as views internas.
+    """
 
     template_name = 'core/dashboard.html'
 
