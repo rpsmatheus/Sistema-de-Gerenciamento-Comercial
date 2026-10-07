@@ -213,7 +213,7 @@ erDiagram
 
 As tarefas são acompanhadas em um quadro no **GitHub Projects**:
 
-🔗 **Quadro Kanban:** _adicionar o link do quadro aqui_
+🔗 **Quadro Kanban:** (https://github.com/users/rpsmatheus/projects/3/views/1)
 
 | Coluna | Significado |
 | --- | --- |
