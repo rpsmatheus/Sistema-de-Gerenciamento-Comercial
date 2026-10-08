@@ -6,7 +6,7 @@ venv/
 __pycache__/
 *.py[cod]
 
-# Banco de dados local (cada pessoa gera o seu com "python manage.py migrate")
+# Banco SQLite usado até a Sprint 1 (o projeto agora usa PostgreSQL)
 db.sqlite3
 db.sqlite3-journal
 
