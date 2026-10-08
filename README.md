@@ -62,7 +62,7 @@ O sistema centraliza tudo isso em uma única interface web, de uso do **gerente*
 | Front-end | **Django Templates** + HTML | Páginas renderizadas no servidor, com herança de templates (`base.html`). |
 | Estilo | **Tailwind CSS** | Estilização com classes utilitárias, como visto na disciplina. |
 | Interatividade | **JavaScript** | Pequenos comportamentos no navegador (confirmação de exclusão, menu responsivo). |
-| Banco de dados | **SQLite** | Banco padrão do Django, sem necessidade de instalação. Como o acesso é feito pelo ORM, pode ser trocado por PostgreSQL ou MySQL sem alterar o código. |
+| Banco de dados | **PostgreSQL** | Banco relacional do sistema, acessado pelo ORM do Django com o driver `psycopg`. Os dados de conexão ficam em um arquivo `.env`, lido com `python-dotenv`. |
 | Versionamento | **Git** e **GitHub** | Código, issues, pull requests e quadro Kanban (GitHub Projects). |
 
 ### Recursos do Django que serão usados
@@ -260,12 +260,12 @@ Sete semanas, com entregas semanais.
 
 ## 8. Como rodar o projeto
 
-Pré-requisitos: **Python 3.10+** e **Git**.
+Pré-requisitos: **Python 3.10+**, **Git** e **PostgreSQL**. A instalação do banco e a criação do usuário estão em [`docs/banco-de-dados.md`](docs/banco-de-dados.md).
 
 ```bash
 # 1. Clonar o repositório
-git clone <url-do-repositorio>
-cd <pasta-do-repositorio>
+git clone https://github.com/rpsmatheus/Sistema-de-Gerenciamento-Comercial.git
+cd Sistema-de-Gerenciamento-Comercial
 
 # 2. Criar e ativar o ambiente virtual
 python -m venv venv
@@ -275,13 +275,16 @@ venv\Scripts\activate           # Windows
 # 3. Instalar as dependências
 pip install -r requirements.txt
 
-# 4. Criar as tabelas do banco
+# 4. Criar o arquivo com os dados de conexão do banco
+cp .env.example .env            # no Prompt de Comando: copy .env.example .env
+
+# 5. Criar as tabelas do banco
 python manage.py migrate
 
-# 5. Criar o usuário do gerente
+# 6. Criar o usuário do gerente
 python manage.py createsuperuser
 
-# 6. Iniciar o servidor
+# 7. Iniciar o servidor
 python manage.py runserver
 ```
 
