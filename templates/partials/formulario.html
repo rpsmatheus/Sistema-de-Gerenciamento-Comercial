@@ -1,0 +1,37 @@
+{% comment %}
+    Campos de um formulário, com rótulo, ajuda e mensagens de erro.
+
+    Uso, dentro de uma tag <form method="post" class="formulario">:
+        {% include 'partials/formulario.html' %}
+
+    Espera uma variável "form" no contexto, que as views CreateView e
+    UpdateView do Django já fornecem.
+{% endcomment %}
+{% csrf_token %}
+
+{% if form.non_field_errors %}
+    <div class="mensagem mensagem-error" role="alert">
+        {% for erro in form.non_field_errors %}
+            <p>{{ erro }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% for campo in form %}
+    <div class="campo">
+        <label for="{{ campo.id_for_label }}">
+            {{ campo.label }}
+            {% if campo.field.required %}<span class="obrigatorio" title="Campo obrigatório">*</span>{% endif %}
+        </label>
+
+        {{ campo }}
+
+        {% if campo.help_text %}
+            <p class="campo-ajuda">{{ campo.help_text }}</p>
+        {% endif %}
+
+        {% for erro in campo.errors %}
+            <p class="campo-erro">{{ erro }}</p>
+        {% endfor %}
+    </div>
+{% endfor %}
