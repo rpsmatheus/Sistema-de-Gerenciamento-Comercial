@@ -68,3 +68,183 @@
     background-color: #eff6ff;
     color: #1e40af;
 }
+
+/* ------------------------------------------------------------------ */
+/* Componentes dos cadastros (Sprint 2)                                */
+/* ------------------------------------------------------------------ */
+
+/* Botões */
+.botao {
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.botao-primario {
+    background-color: #92400e;
+    color: #ffffff;
+}
+
+.botao-primario:hover {
+    background-color: #b45309;
+}
+
+.botao-secundario {
+    background-color: #ffffff;
+    border-color: #d6d3d1;
+    color: #44403c;
+}
+
+.botao-secundario:hover {
+    background-color: #f5f5f4;
+}
+
+.botao-perigo {
+    background-color: #b91c1c;
+    color: #ffffff;
+}
+
+.botao-perigo:hover {
+    background-color: #991b1b;
+}
+
+/* Links de ação dentro das tabelas */
+.link-acao {
+    color: #92400e;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.link-acao:hover {
+    text-decoration: underline;
+}
+
+.link-acao-perigo {
+    color: #b91c1c;
+}
+
+/* Tabelas de listagem */
+.tabela-container {
+    background-color: #ffffff;
+    border: 1px solid #e7e5e4;
+    border-radius: 0.75rem;
+    overflow-x: auto;
+}
+
+.tabela {
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    width: 100%;
+}
+
+.tabela th {
+    background-color: #fafaf9;
+    border-bottom: 1px solid #e7e5e4;
+    color: #57534e;
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.tabela td {
+    border-bottom: 1px solid #f5f5f4;
+    padding: 0.75rem 1rem;
+}
+
+.tabela tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tabela tbody tr:hover {
+    background-color: #fffbeb;
+}
+
+.tabela .coluna-acoes {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.tabela .coluna-acoes a + a {
+    margin-left: 0.75rem;
+}
+
+/* Aviso de listagem vazia */
+.lista-vazia {
+    background-color: #ffffff;
+    border: 1px dashed #d6d3d1;
+    border-radius: 0.75rem;
+    color: #78716c;
+    padding: 2.5rem 1rem;
+    text-align: center;
+}
+
+/* Formulários */
+.formulario {
+    background-color: #ffffff;
+    border: 1px solid #e7e5e4;
+    border-radius: 0.75rem;
+    max-width: 36rem;
+    padding: 1.5rem;
+}
+
+.formulario .campo {
+    margin-bottom: 1rem;
+}
+
+.formulario label {
+    color: #44403c;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.formulario .obrigatorio {
+    color: #b91c1c;
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario input[type="number"],
+.formulario input[type="date"],
+.formulario select,
+.formulario textarea {
+    border: 1px solid #d6d3d1;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+    border-color: #d97706;
+    box-shadow: 0 0 0 1px #d97706;
+    outline: none;
+}
+
+.formulario .campo-ajuda {
+    color: #78716c;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.formulario .campo-erro {
+    color: #b91c1c;
+    font-size: 0.8125rem;
+    margin-top: 0.25rem;
+}
+
+.formulario .acoes {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
