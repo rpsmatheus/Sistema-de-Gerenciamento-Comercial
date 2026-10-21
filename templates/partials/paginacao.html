@@ -1,0 +1,28 @@
+{% comment %}
+    Navegação entre páginas de uma listagem.
+
+    Uso, no template de uma ListView com paginate_by definido:
+        {% include 'partials/paginacao.html' %}
+
+    Usa as variáveis "is_paginated" e "page_obj", que a ListView fornece.
+    Não aparece quando todos os registros cabem em uma página.
+{% endcomment %}
+{% if is_paginated %}
+    <nav class="mt-6 flex items-center justify-between text-sm" aria-label="Paginação">
+        <div>
+            {% if page_obj.has_previous %}
+                <a class="botao botao-secundario" href="?page={{ page_obj.previous_page_number }}">← Anterior</a>
+            {% endif %}
+        </div>
+
+        <span class="text-stone-600">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+        </span>
+
+        <div>
+            {% if page_obj.has_next %}
+                <a class="botao botao-secundario" href="?page={{ page_obj.next_page_number }}">Próxima →</a>
+            {% endif %}
+        </div>
+    </nav>
+{% endif %}
