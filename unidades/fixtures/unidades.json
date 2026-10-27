@@ -1,0 +1,32 @@
+[
+  {
+    "model": "unidades.unidade",
+    "pk": 1,
+    "fields": {
+      "nome": "Unidade Centro",
+      "endereco": "Rua das Padarias, 100 - Centro",
+      "telefone": "(31) 3333-0001",
+      "criado_em": "2026-10-12T12:00:00Z"
+    }
+  },
+  {
+    "model": "unidades.unidade",
+    "pk": 2,
+    "fields": {
+      "nome": "Unidade Jardim",
+      "endereco": "Avenida do Trigo, 250 - Jardim das Flores",
+      "telefone": "(31) 3333-0002",
+      "criado_em": "2026-10-12T12:00:00Z"
+    }
+  },
+  {
+    "model": "unidades.unidade",
+    "pk": 3,
+    "fields": {
+      "nome": "Fábrica",
+      "endereco": "Rodovia do Fermento, km 5 - Distrito Industrial",
+      "telefone": "",
+      "criado_em": "2026-10-12T12:00:00Z"
+    }
+  }
+]
