@@ -1,6 +1,9 @@
 from django.contrib.auth import get_user_model
-from django.test import TestCase
+from django.test import RequestFactory, TestCase
 from django.urls import reverse
+from django.views.generic import ListView
+
+from core.mixins import BuscaMixin
 
 
 class AutenticacaoTests(TestCase):
@@ -83,3 +86,50 @@ class DashboardTests(TestCase):
         self.assertContains(resposta, f'href="{reverse("unidades_lista")}"')
         self.assertContains(resposta, f'href="{reverse("clientes_lista")}"')
         self.assertContains(resposta, 'Disponível')
+
+
+class UsuarioListaView(BuscaMixin, ListView):
+    """View usada apenas nos testes do BuscaMixin."""
+
+    model = get_user_model()
+    campos_busca = ['username', 'email']
+    ordering = ['username']
+    paginate_by = 2
+
+
+class BuscaMixinTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        Usuario = get_user_model()
+        Usuario.objects.create_user(username='ana', email='ana@exemplo.com')
+        Usuario.objects.create_user(username='bruno', email='bruno@padaria.com')
+        Usuario.objects.create_user(username='carla', email='carla@padaria.com')
+
+    def resposta(self, parametros):
+        request = RequestFactory().get('/', parametros)
+        view = UsuarioListaView.as_view(template_name='base.html')
+        return view(request)
+
+    def nomes(self, resposta):
+        return [usuario.username for usuario in resposta.context_data['object_list']]
+
+    def test_sem_busca_lista_todos(self):
+        resposta = self.resposta({})
+        self.assertEqual(resposta.context_data['paginator'].count, 3)
+        self.assertEqual(resposta.context_data['q'], '')
+
+    def test_busca_em_qualquer_um_dos_campos(self):
+        resposta = self.resposta({'q': 'padaria'})
+        self.assertEqual(self.nomes(resposta), ['bruno', 'carla'])
+
+    def test_busca_ignora_maiusculas_e_espacos(self):
+        resposta = self.resposta({'q': '  ANA  '})
+        self.assertEqual(self.nomes(resposta), ['ana'])
+        self.assertEqual(resposta.context_data['q'], 'ANA')
+
+    def test_querystring_mantem_busca_e_remove_pagina(self):
+        resposta = self.resposta({'q': 'a', 'page': '2', 'situacao': 'ativo'})
+        querystring = resposta.context_data['querystring']
+        self.assertIn('q=a', querystring)
+        self.assertIn('situacao=ativo', querystring)
+        self.assertNotIn('page', querystring)
