@@ -6,12 +6,15 @@
 
     Usa as variáveis "is_paginated" e "page_obj", que a ListView fornece.
     Não aparece quando todos os registros cabem em uma página.
+
+    Se a view usar o BuscaMixin, a variável "querystring" faz os links
+    manterem a busca e os filtros ao trocar de página.
 {% endcomment %}
 {% if is_paginated %}
     <nav class="mt-6 flex items-center justify-between text-sm" aria-label="Paginação">
         <div>
             {% if page_obj.has_previous %}
-                <a class="botao botao-secundario" href="?page={{ page_obj.previous_page_number }}">← Anterior</a>
+                <a class="botao botao-secundario" href="?page={{ page_obj.previous_page_number }}{% if querystring %}&amp;{{ querystring }}{% endif %}">← Anterior</a>
             {% endif %}
         </div>
 
@@ -21,7 +24,7 @@
 
         <div>
             {% if page_obj.has_next %}
-                <a class="botao botao-secundario" href="?page={{ page_obj.next_page_number }}">Próxima →</a>
+                <a class="botao botao-secundario" href="?page={{ page_obj.next_page_number }}{% if querystring %}&amp;{{ querystring }}{% endif %}">Próxima →</a>
             {% endif %}
         </div>
     </nav>

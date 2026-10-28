@@ -1,0 +1,17 @@
+{% comment %}
+    Campo de busca das listagens.
+
+    Uso, no template de uma ListView que usa o BuscaMixin:
+        {% include 'partials/busca.html' with placeholder='Buscar por nome' %}
+
+    Usa a variável "q", fornecida pelo BuscaMixin.
+{% endcomment %}
+<form method="get" class="barra-busca" role="search">
+    <input type="search" name="q" value="{{ q }}"
+           placeholder="{{ placeholder|default:'Buscar' }}"
+           aria-label="{{ placeholder|default:'Buscar' }}">
+    <button type="submit" class="botao botao-secundario">Buscar</button>
+    {% if q %}
+        <a href="{{ request.path }}" class="link-acao">Limpar</a>
+    {% endif %}
+</form>
