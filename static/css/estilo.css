@@ -248,3 +248,48 @@
     gap: 0.75rem;
     margin-top: 1.5rem;
 }
+
+/* ------------------------------------------------------------------ */
+/* Busca e filtros das listagens (Sprint 3)                            */
+/* ------------------------------------------------------------------ */
+
+.barra-busca {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.barra-busca input[type="search"],
+.barra-busca select {
+    background-color: #ffffff;
+    border: 1px solid #d6d3d1;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.barra-busca input[type="search"] {
+    flex: 1 1 16rem;
+    min-width: 0;
+}
+
+.barra-busca input:focus,
+.barra-busca select:focus {
+    border-color: #d97706;
+    box-shadow: 0 0 0 1px #d97706;
+    outline: none;
+}
+
+/* Etiqueta de situação inativa (funcionários) */
+.etiqueta-inativo {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Texto secundário abaixo do nome, nas tabelas */
+.texto-secundario {
+    color: #78716c;
+    display: block;
+    font-size: 0.75rem;
+}
