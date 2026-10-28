@@ -1,0 +1,146 @@
+[
+  {
+    "model": "clientes.cliente",
+    "pk": 1,
+    "fields": {
+      "nome": "Maria Aparecida Souza",
+      "documento": "12345678901",
+      "telefone": "(31) 99999-0001",
+      "email": "maria.souza@exemplo.com",
+      "endereco": "Rua das Acácias, 45 - Centro",
+      "criado_em": "2026-10-12T12:00:00Z"
+    }
+  },
+  {
+    "model": "clientes.cliente",
+    "pk": 2,
+    "fields": {
+      "nome": "João Pedro Lima",
+      "documento": "23456789012",
+      "telefone": "(31) 99999-0002",
+      "email": "joao.lima@exemplo.com",
+      "endereco": "Rua dos Ipês, 120 - Jardim das Flores",
+      "criado_em": "2026-10-12T12:00:00Z"
+    }
+  },
+  {
+    "model": "clientes.cliente",
+    "pk": 3,
+    "fields": {
+      "nome": "Ana Clara Ferreira",
+      "documento": "34567890123",
+      "telefone": "(31) 99999-0003",
+      "email": "",
+      "endereco": "Travessa do Sol, 8 - Vila Nova",
+      "criado_em": "2026-10-12T12:00:00Z"
+    }
+  },
+  {
+    "model": "clientes.cliente",
+    "pk": 4,
+    "fields": {
+      "nome": "Café da Praça Ltda",
+      "documento": "12345678000190",
+      "telefone": "(31) 3333-1001",
+      "email": "compras@cafedapraca.exemplo.com",
+      "endereco": "Praça Central, 15 - Centro",
+      "criado_em": "2026-10-12T12:00:00Z"
+    }
+  },
+  {
+    "model": "clientes.cliente",
+    "pk": 5,
+    "fields": {
+      "nome": "Empório Sabor da Serra",
+      "documento": "23456789000181",
+      "telefone": "(31) 3333-1002",
+      "email": "contato@sabordaserra.exemplo.com",
+      "endereco": "Avenida das Montanhas, 900 - Alto da Serra",
+      "criado_em": "2026-10-12T12:00:00Z"
+    }
+  },
+  {
+    "model": "clientes.cliente",
+    "pk": 6,
+    "fields": {
+      "nome": "Restaurante Fogão a Lenha",
+      "documento": "34567890000172",
+      "telefone": "(31) 3333-1003",
+      "email": "",
+      "endereco": "Rua do Mercado, 77 - Centro",
+      "criado_em": "2026-10-12T12:00:00Z"
+    }
+  },
+  {
+    "model": "clientes.cliente",
+    "pk": 7,
+    "fields": {
+      "nome": "Hotel Bela Vista",
+      "documento": "45678901000163",
+      "telefone": "(31) 3333-1004",
+      "email": "reservas@hotelbelavista.exemplo.com",
+      "endereco": "Avenida Panorâmica, 300 - Mirante",
+      "criado_em": "2026-10-12T12:00:00Z"
+    }
+  },
+  {
+    "model": "clientes.cliente",
+    "pk": 8,
+    "fields": {
+      "nome": "Carlos Eduardo Rocha",
+      "documento": "45678901234",
+      "telefone": "",
+      "email": "carlos.rocha@exemplo.com",
+      "endereco": "",
+      "criado_em": "2026-10-12T12:00:00Z"
+    }
+  },
+  {
+    "model": "clientes.cliente",
+    "pk": 9,
+    "fields": {
+      "nome": "Mercearia Dona Lúcia",
+      "documento": "56789012000154",
+      "telefone": "(31) 3333-1005",
+      "email": "",
+      "endereco": "Rua da Feira, 32 - Vila Nova",
+      "criado_em": "2026-10-12T12:00:00Z"
+    }
+  },
+  {
+    "model": "clientes.cliente",
+    "pk": 10,
+    "fields": {
+      "nome": "Fernanda Oliveira Santos",
+      "documento": "56789012345",
+      "telefone": "(31) 99999-0004",
+      "email": "fernanda.santos@exemplo.com",
+      "endereco": "Rua das Palmeiras, 210 - Jardim das Flores",
+      "criado_em": "2026-10-12T12:00:00Z"
+    }
+  },
+  {
+    "model": "clientes.cliente",
+    "pk": 11,
+    "fields": {
+      "nome": "Cantina Universitária",
+      "documento": "67890123000145",
+      "telefone": "(31) 3333-1006",
+      "email": "cantina@exemplo.com",
+      "endereco": "Campus Universitário, Bloco C",
+      "criado_em": "2026-10-12T12:00:00Z"
+    }
+  },
+  {
+    "model": "clientes.cliente",
+    "pk": 12,
+    "fields": {
+      "nome": "Lucas Gabriel Martins",
+      "documento": "67890123456",
+      "telefone": "(31) 99999-0005",
+      "email": "",
+      "endereco": "Rua do Horizonte, 55 - Mirante",
+      "criado_em": "2026-10-12T12:00:00Z"
+    }
+  }
+]
