@@ -303,14 +303,14 @@ Acesse `http://127.0.0.1:8000/`.
 
 ## 9. Status do desenvolvimento
 
-- [ ] Repositório criado e organizado
-- [ ] Quadro Kanban configurado
-- [ ] Projeto Django criado (`config`)
-- [ ] App `core` com template base
-- [ ] Login e logout
-- [ ] Dashboard
-- [ ] Unidades
-- [ ] Clientes
+- [x] Repositório criado e organizado
+- [x] Quadro Kanban configurado
+- [x] Projeto Django criado (`config`)
+- [x] App `core` com template base
+- [x] Login e logout
+- [x] Dashboard
+- [x] Unidades
+- [x] Clientes
 - [ ] Fornecedores
 - [ ] Funcionários
 - [ ] Estoque
