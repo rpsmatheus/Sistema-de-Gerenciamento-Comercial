@@ -77,3 +77,9 @@ class DashboardTests(TestCase):
         resposta = self.client.get(reverse('dashboard'))
         self.assertContains(resposta, 'Olá, gerente')
         self.assertContains(resposta, 'Sair')
+
+    def test_modulos_prontos_tem_link_no_dashboard_e_no_menu(self):
+        resposta = self.client.get(reverse('dashboard'))
+        self.assertContains(resposta, f'href="{reverse("unidades_lista")}"')
+        self.assertContains(resposta, f'href="{reverse("clientes_lista")}"')
+        self.assertContains(resposta, 'Disponível')
