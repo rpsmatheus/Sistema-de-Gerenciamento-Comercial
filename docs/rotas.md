@@ -12,10 +12,10 @@ Todas as rotas, exceto `/login/`, exigem usuário autenticado.
 
 | Rota | Nome | Página | Situação |
 | --- | --- | --- | --- |
-| `/` | `dashboard` | Dashboard com atalhos para os módulos | Sprint 1 |
-| `/login/` | `login` | Formulário de acesso do gerente | Sprint 1 |
-| `/logout/` | `logout` | Encerra a sessão (somente POST) | Sprint 1 |
-| `/admin/` | — | Painel administrativo do Django | Sprint 1 |
+| `/` | `dashboard` | Dashboard com atalhos para os módulos | Feito |
+| `/login/` | `login` | Formulário de acesso do gerente | Feito |
+| `/logout/` | `logout` | Encerra a sessão (somente POST) | Feito |
+| `/admin/` | — | Painel administrativo do Django | Feito |
 
 ## Padrão dos cadastros
 
@@ -32,19 +32,19 @@ Unidades, clientes, fornecedores e funcionários seguem o mesmo padrão de quatr
 
 | Rota | Nome | Situação |
 | --- | --- | --- |
-| `/unidades/` | `unidades_lista` | Sprint 2 |
-| `/unidades/novo/` | `unidades_criar` | Sprint 2 |
-| `/unidades/<id>/editar/` | `unidades_editar` | Sprint 2 |
-| `/unidades/<id>/excluir/` | `unidades_excluir` | Sprint 2 |
+| `/unidades/` | `unidades_lista` | Feito |
+| `/unidades/novo/` | `unidades_criar` | Feito |
+| `/unidades/<id>/editar/` | `unidades_editar` | Feito |
+| `/unidades/<id>/excluir/` | `unidades_excluir` | Feito |
 
 ## Clientes (app `clientes`)
 
 | Rota | Nome | Situação |
 | --- | --- | --- |
-| `/clientes/` | `clientes_lista` | Sprint 2 |
-| `/clientes/novo/` | `clientes_criar` | Sprint 2 |
-| `/clientes/<id>/editar/` | `clientes_editar` | Sprint 2 |
-| `/clientes/<id>/excluir/` | `clientes_excluir` | Sprint 2 |
+| `/clientes/` | `clientes_lista` | Feito |
+| `/clientes/novo/` | `clientes_criar` | Feito |
+| `/clientes/<id>/editar/` | `clientes_editar` | Feito |
+| `/clientes/<id>/excluir/` | `clientes_excluir` | Feito |
 
 ## Fornecedores (app `fornecedores`)
 

@@ -20,7 +20,17 @@
                         Dashboard
                     </a>
                 </li>
-                {# Os links dos módulos entram aqui conforme forem implementados #}
+                <li>
+                    <a href="{% url 'unidades_lista' %}" class="block rounded px-3 py-2 hover:bg-amber-700">
+                        Unidades
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'clientes_lista' %}" class="block rounded px-3 py-2 hover:bg-amber-700">
+                        Clientes
+                    </a>
+                </li>
+                {# Os links dos próximos módulos entram aqui conforme forem implementados #}
 
                 <li class="px-3 py-2 text-sm text-amber-200 md:border-l md:border-amber-700 md:pl-4">
                     Olá, {{ user.get_username }}
