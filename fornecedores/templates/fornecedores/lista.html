@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Fornecedores{% endblock %}
+
+{% block conteudo %}
+    <div class="flex flex-wrap items-center justify-between gap-3">
+        <div>
+            <h1 class="text-2xl font-bold text-stone-900">Fornecedores</h1>
+            <p class="mt-1 text-stone-600">Empresas que fornecem insumos, embalagens e serviços.</p>
+        </div>
+        <a href="{% url 'fornecedores_criar' %}" class="botao botao-primario">+ Novo fornecedor</a>
+    </div>
+
+    <div class="mt-6">
+        {% include 'partials/busca.html' with placeholder='Buscar por razão social, nome fantasia, CNPJ ou contato' %}
+    </div>
+
+    <div class="mt-4">
+        {% if fornecedores %}
+            <div class="tabela-container">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th>Fornecedor</th>
+                            <th>CNPJ</th>
+                            <th>Contato</th>
+                            <th>Telefone</th>
+                            <th class="coluna-acoes">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for fornecedor in fornecedores %}
+                            <tr>
+                                <td>
+                                    <span class="font-medium text-stone-900">{{ fornecedor.razao_social }}</span>
+                                    {% if fornecedor.nome_fantasia %}
+                                        <span class="texto-secundario">{{ fornecedor.nome_fantasia }}</span>
+                                    {% endif %}
+                                </td>
+                                <td class="whitespace-nowrap">{{ fornecedor.cnpj_formatado }}</td>
+                                <td>{{ fornecedor.contato|default:'—' }}</td>
+                                <td class="whitespace-nowrap">{{ fornecedor.telefone|default:'—' }}</td>
+                                <td class="coluna-acoes">
+                                    <a href="{% url 'fornecedores_editar' fornecedor.pk %}" class="link-acao">Editar</a>
+                                    <a href="{% url 'fornecedores_excluir' fornecedor.pk %}" class="link-acao link-acao-perigo">Excluir</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            {% include 'partials/paginacao.html' %}
+        {% elif q %}
+            <div class="lista-vazia">
+                Nenhum fornecedor encontrado para "{{ q }}".
+                <a href="{% url 'fornecedores_lista' %}" class="link-acao">Limpar busca</a>
+            </div>
+        {% else %}
+            <div class="lista-vazia">
+                Nenhum fornecedor cadastrado ainda.
+                <a href="{% url 'fornecedores_criar' %}" class="link-acao">Cadastrar o primeiro</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
