@@ -1,0 +1,86 @@
+[
+  {
+    "model": "fornecedores.fornecedor",
+    "pk": 1,
+    "fields": {
+      "razao_social": "Moinho Serra Azul Ltda",
+      "nome_fantasia": "Farinhas Serra Azul",
+      "cnpj": "11222333000144",
+      "contato": "Roberto Lima",
+      "telefone": "(31) 3333-2001",
+      "email": "vendas@serraazul.exemplo.com",
+      "observacoes": "Farinha de trigo e farinha integral. Entrega às segundas e quintas.",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "fornecedores.fornecedor",
+    "pk": 2,
+    "fields": {
+      "razao_social": "Laticínios Vale Verde S.A.",
+      "nome_fantasia": "Vale Verde",
+      "cnpj": "22333444000155",
+      "contato": "Cláudia Rocha",
+      "telefone": "(31) 3333-2002",
+      "email": "pedidos@valeverde.exemplo.com",
+      "observacoes": "Manteiga, leite e creme de leite. Pedido mínimo de R$ 300.",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "fornecedores.fornecedor",
+    "pk": 3,
+    "fields": {
+      "razao_social": "Embalagens Bom Pão Ltda",
+      "nome_fantasia": "",
+      "cnpj": "33444555000166",
+      "contato": "Marcos",
+      "telefone": "(31) 3333-2003",
+      "email": "",
+      "observacoes": "Sacos de papel kraft e caixas para bolo.",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "fornecedores.fornecedor",
+    "pk": 4,
+    "fields": {
+      "razao_social": "Distribuidora Grão de Ouro Ltda",
+      "nome_fantasia": "Grão de Ouro",
+      "cnpj": "44555666000177",
+      "contato": "Patrícia Mendes",
+      "telefone": "(31) 3333-2004",
+      "email": "contato@graodeouro.exemplo.com",
+      "observacoes": "Fermento, sal, açúcar e sementes.",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "fornecedores.fornecedor",
+    "pk": 5,
+    "fields": {
+      "razao_social": "Ovos da Fazenda Boa Esperança",
+      "nome_fantasia": "Granja Boa Esperança",
+      "cnpj": "55666777000188",
+      "contato": "Seu Antônio",
+      "telefone": "(31) 99999-2005",
+      "email": "",
+      "observacoes": "Ovos caipiras. Entrega diária, até as 7h.",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "fornecedores.fornecedor",
+    "pk": 6,
+    "fields": {
+      "razao_social": "TecForno Manutenção Industrial Ltda",
+      "nome_fantasia": "TecForno",
+      "cnpj": "66777888000199",
+      "contato": "Eduardo",
+      "telefone": "(31) 3333-2006",
+      "email": "suporte@tecforno.exemplo.com",
+      "observacoes": "Assistência técnica de fornos e masseiras.",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  }
+]
