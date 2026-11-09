@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Funcionários{% endblock %}
+
+{% block conteudo %}
+    <div class="flex flex-wrap items-center justify-between gap-3">
+        <div>
+            <h1 class="text-2xl font-bold text-stone-900">Funcionários</h1>
+            <p class="mt-1 text-stone-600">Equipe de cada unidade, cargos e situação.</p>
+        </div>
+        <a href="{% url 'funcionarios_criar' %}" class="botao botao-primario">+ Novo funcionário</a>
+    </div>
+
+    {# Busca e filtros no mesmo formulário: todos vão para a URL juntos. #}
+    <form method="get" class="barra-busca mt-6" role="search">
+        <input type="search" name="q" value="{{ q }}"
+               placeholder="Buscar por nome, e-mail ou telefone"
+               aria-label="Buscar por nome, e-mail ou telefone">
+
+        <select name="unidade" aria-label="Filtrar por unidade">
+            <option value="">Todas as unidades</option>
+            {% for unidade in unidades %}
+                <option value="{{ unidade.pk }}" {% if unidade_selecionada == unidade.pk|stringformat:'s' %}selected{% endif %}>
+                    {{ unidade.nome }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <select name="situacao" aria-label="Filtrar por situação">
+            <option value="">Todas as situações</option>
+            {% for valor, rotulo in situacoes %}
+                <option value="{{ valor }}" {% if situacao_selecionada == valor %}selected{% endif %}>{{ rotulo }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit" class="botao botao-secundario">Filtrar</button>
+        {% if filtrando %}
+            <a href="{% url 'funcionarios_lista' %}" class="link-acao">Limpar</a>
+        {% endif %}
+    </form>
+
+    <div class="mt-4">
+        {% if funcionarios %}
+            <div class="tabela-container">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Cargo</th>
+                            <th>Unidade</th>
+                            <th>Telefone</th>
+                            <th>Situação</th>
+                            <th class="coluna-acoes">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for funcionario in funcionarios %}
+                            <tr>
+                                <td>
+                                    <span class="font-medium text-stone-900">{{ funcionario.nome }}</span>
+                                    <span class="texto-secundario">Desde {{ funcionario.data_admissao|date:'d/m/Y' }}</span>
+                                </td>
+                                <td>{{ funcionario.get_cargo_display }}</td>
+                                <td>{{ funcionario.unidade }}</td>
+                                <td class="whitespace-nowrap">{{ funcionario.telefone|default:'—' }}</td>
+                                <td>
+                                    {% if funcionario.ativo %}
+                                        <span class="etiqueta etiqueta-disponivel">Ativo</span>
+                                    {% else %}
+                                        <span class="etiqueta etiqueta-inativo">Inativo</span>
+                                    {% endif %}
+                                </td>
+                                <td class="coluna-acoes">
+                                    <a href="{% url 'funcionarios_editar' funcionario.pk %}" class="link-acao">Editar</a>
+                                    <a href="{% url 'funcionarios_excluir' funcionario.pk %}" class="link-acao link-acao-perigo">Excluir</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            {% include 'partials/paginacao.html' %}
+        {% elif filtrando %}
+            <div class="lista-vazia">
+                Nenhum funcionário encontrado com estes filtros.
+                <a href="{% url 'funcionarios_lista' %}" class="link-acao">Limpar filtros</a>
+            </div>
+        {% elif not unidades %}
+            <div class="lista-vazia">
+                Para cadastrar funcionários, cadastre antes uma unidade.
+                <a href="{% url 'unidades_criar' %}" class="link-acao">Cadastrar unidade</a>
+            </div>
+        {% else %}
+            <div class="lista-vazia">
+                Nenhum funcionário cadastrado ainda.
+                <a href="{% url 'funcionarios_criar' %}" class="link-acao">Cadastrar o primeiro</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
