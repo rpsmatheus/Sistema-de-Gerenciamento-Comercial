@@ -1,5 +1,8 @@
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.db.models import ProtectedError
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
@@ -47,3 +50,17 @@ class UnidadeExcluirView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     success_url = reverse_lazy('unidades_lista')
     success_message = 'Unidade removida com sucesso.'
     extra_context = {'url_cancelar': reverse_lazy('unidades_lista')}
+
+    def form_valid(self, form):
+        # Uma unidade com funcionários vinculados não pode ser removida
+        # (o model Funcionario usa on_delete=PROTECT). Em vez de mostrar
+        # uma página de erro, o sistema volta para a listagem com um aviso.
+        try:
+            return super().form_valid(form)
+        except ProtectedError:
+            messages.error(
+                self.request,
+                f'A unidade "{self.object}" não pode ser removida porque tem '
+                'funcionários vinculados. Transfira ou remova os funcionários antes.',
+            )
+            return redirect('unidades_lista')

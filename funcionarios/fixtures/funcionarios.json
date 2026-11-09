@@ -1,0 +1,170 @@
+[
+  {
+    "model": "funcionarios.funcionario",
+    "pk": 1,
+    "fields": {
+      "nome": "João Batista Silva",
+      "unidade": 1,
+      "cargo": "padeiro",
+      "telefone": "(31) 99999-3001",
+      "email": "joao.silva@exemplo.com",
+      "data_admissao": "2021-02-01",
+      "situacao": "ativo",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "funcionarios.funcionario",
+    "pk": 2,
+    "fields": {
+      "nome": "Maria das Graças Souza",
+      "unidade": 1,
+      "cargo": "confeiteiro",
+      "telefone": "(31) 99999-3002",
+      "email": "",
+      "data_admissao": "2022-05-16",
+      "situacao": "ativo",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "funcionarios.funcionario",
+    "pk": 3,
+    "fields": {
+      "nome": "Ana Paula Ferreira",
+      "unidade": 1,
+      "cargo": "atendente",
+      "telefone": "(31) 99999-3003",
+      "email": "ana.ferreira@exemplo.com",
+      "data_admissao": "2023-08-07",
+      "situacao": "ativo",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "funcionarios.funcionario",
+    "pk": 4,
+    "fields": {
+      "nome": "Carlos Henrique Dias",
+      "unidade": 1,
+      "cargo": "gerente",
+      "telefone": "(31) 99999-3004",
+      "email": "carlos.dias@exemplo.com",
+      "data_admissao": "2020-01-13",
+      "situacao": "ativo",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "funcionarios.funcionario",
+    "pk": 5,
+    "fields": {
+      "nome": "Juliana Martins",
+      "unidade": 2,
+      "cargo": "atendente",
+      "telefone": "(31) 99999-3005",
+      "email": "",
+      "data_admissao": "2024-03-04",
+      "situacao": "ativo",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "funcionarios.funcionario",
+    "pk": 6,
+    "fields": {
+      "nome": "Rafael Costa",
+      "unidade": 2,
+      "cargo": "caixa",
+      "telefone": "(31) 99999-3006",
+      "email": "",
+      "data_admissao": "2023-11-20",
+      "situacao": "ativo",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "funcionarios.funcionario",
+    "pk": 7,
+    "fields": {
+      "nome": "Beatriz Almeida",
+      "unidade": 2,
+      "cargo": "gerente",
+      "telefone": "(31) 99999-3007",
+      "email": "beatriz.almeida@exemplo.com",
+      "data_admissao": "2021-07-01",
+      "situacao": "ativo",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "funcionarios.funcionario",
+    "pk": 8,
+    "fields": {
+      "nome": "Pedro Augusto Lima",
+      "unidade": 2,
+      "cargo": "entregador",
+      "telefone": "(31) 99999-3008",
+      "email": "",
+      "data_admissao": "2022-09-12",
+      "situacao": "inativo",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "funcionarios.funcionario",
+    "pk": 9,
+    "fields": {
+      "nome": "Antônio Carlos Ribeiro",
+      "unidade": 3,
+      "cargo": "padeiro",
+      "telefone": "(31) 99999-3009",
+      "email": "",
+      "data_admissao": "2019-04-22",
+      "situacao": "ativo",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "funcionarios.funcionario",
+    "pk": 10,
+    "fields": {
+      "nome": "Luciana Pereira",
+      "unidade": 3,
+      "cargo": "auxiliar",
+      "telefone": "(31) 99999-3010",
+      "email": "",
+      "data_admissao": "2024-06-03",
+      "situacao": "ativo",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "funcionarios.funcionario",
+    "pk": 11,
+    "fields": {
+      "nome": "Marcos Vinícius Rocha",
+      "unidade": 3,
+      "cargo": "auxiliar",
+      "telefone": "(31) 99999-3011",
+      "email": "",
+      "data_admissao": "2023-02-27",
+      "situacao": "ativo",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  },
+  {
+    "model": "funcionarios.funcionario",
+    "pk": 12,
+    "fields": {
+      "nome": "Fernanda Gomes",
+      "unidade": 3,
+      "cargo": "confeiteiro",
+      "telefone": "(31) 99999-3012",
+      "email": "fernanda.gomes@exemplo.com",
+      "data_admissao": "2022-10-10",
+      "situacao": "inativo",
+      "criado_em": "2026-10-28T12:00:00Z"
+    }
+  }
+]
