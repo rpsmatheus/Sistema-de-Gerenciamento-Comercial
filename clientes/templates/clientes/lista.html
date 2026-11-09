@@ -12,6 +12,10 @@
     </div>
 
     <div class="mt-6">
+        {% include 'partials/busca.html' with placeholder='Buscar por nome, CPF ou CNPJ, e-mail ou telefone' %}
+    </div>
+
+    <div class="mt-4">
         {% if clientes %}
             <div class="tabela-container">
                 <table class="tabela">
@@ -42,6 +46,11 @@
             </div>
 
             {% include 'partials/paginacao.html' %}
+        {% elif q %}
+            <div class="lista-vazia">
+                Nenhum cliente encontrado para "{{ q }}".
+                <a href="{% url 'clientes_lista' %}" class="link-acao">Limpar busca</a>
+            </div>
         {% else %}
             <div class="lista-vazia">
                 Nenhum cliente cadastrado ainda.
