@@ -6,6 +6,8 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
+from core.mixins import BuscaMixin
+
 from .forms import UnidadeForm
 from .models import Unidade
 
@@ -13,13 +15,14 @@ from .models import Unidade
 # é redirecionado para a tela de login.
 
 
-class UnidadeListaView(LoginRequiredMixin, ListView):
-    """Listagem das unidades, com 10 por página."""
+class UnidadeListaView(LoginRequiredMixin, BuscaMixin, ListView):
+    """Listagem das unidades, com busca e 10 por página."""
 
     model = Unidade
     template_name = 'unidades/lista.html'
     context_object_name = 'unidades'
     paginate_by = 10
+    campos_busca = ['nome', 'endereco', 'telefone']
 
 
 class UnidadeCriarView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
