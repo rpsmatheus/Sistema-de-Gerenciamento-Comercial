@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
+from estoque.models import ItemEstoque
 from funcionarios.models import Funcionario
 from unidades.models import Unidade
 
@@ -38,5 +39,16 @@ class ExclusaoDeUnidadeComFuncionariosTests(TestCase):
         )
         self.assertRedirects(resposta, reverse('unidades_lista'))
         self.assertEqual(Unidade.objects.count(), 1)
-        self.assertContains(resposta, 'não pode ser removida porque tem funcionários vinculados')
+        self.assertContains(resposta, 'não pode ser removida porque tem funcionários ou itens de estoque vinculados')
         self.assertNotContains(resposta, 'Unidade removida com sucesso.')
+
+    def test_unidade_com_itens_de_estoque_nao_e_removida(self):
+        ItemEstoque.objects.create(
+            nome='Farinha de trigo', tipo='insumo', unidade_medida='kg', unidade=self.unidade,
+        )
+        resposta = self.client.post(
+            reverse('unidades_excluir', args=[self.unidade.pk]),
+            follow=True,
+        )
+        self.assertEqual(Unidade.objects.count(), 1)
+        self.assertContains(resposta, 'itens de estoque vinculados')
