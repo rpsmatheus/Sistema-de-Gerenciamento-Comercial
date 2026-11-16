@@ -55,8 +55,8 @@ class UnidadeExcluirView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     extra_context = {'url_cancelar': reverse_lazy('unidades_lista')}
 
     def form_valid(self, form):
-        # Uma unidade com funcionários vinculados não pode ser removida
-        # (o model Funcionario usa on_delete=PROTECT). Em vez de mostrar
+        # Uma unidade com funcionários ou itens de estoque vinculados não
+        # pode ser removida (os dois models usam on_delete=PROTECT). Em vez de mostrar
         # uma página de erro, o sistema volta para a listagem com um aviso.
         try:
             return super().form_valid(form)
@@ -64,6 +64,7 @@ class UnidadeExcluirView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
             messages.error(
                 self.request,
                 f'A unidade "{self.object}" não pode ser removida porque tem '
-                'funcionários vinculados. Transfira ou remova os funcionários antes.',
+                'funcionários ou itens de estoque vinculados. Transfira ou remova '
+                'esses registros antes.',
             )
             return redirect('unidades_lista')
