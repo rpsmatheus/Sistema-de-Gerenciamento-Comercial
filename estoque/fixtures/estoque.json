@@ -1,0 +1,584 @@
+[
+  {
+    "model": "estoque.itemestoque",
+    "pk": 1,
+    "fields": {
+      "nome": "Farinha de trigo",
+      "tipo": "insumo",
+      "unidade_medida": "kg",
+      "unidade": 3,
+      "fornecedor": 1,
+      "quantidade": "95",
+      "quantidade_minima": "50",
+      "criado_em": "2026-11-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "estoque.itemestoque",
+    "pk": 2,
+    "fields": {
+      "nome": "Farinha integral",
+      "tipo": "insumo",
+      "unidade_medida": "kg",
+      "unidade": 3,
+      "fornecedor": 1,
+      "quantidade": "15",
+      "quantidade_minima": "20",
+      "criado_em": "2026-11-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "estoque.itemestoque",
+    "pk": 3,
+    "fields": {
+      "nome": "Fermento biológico",
+      "tipo": "insumo",
+      "unidade_medida": "kg",
+      "unidade": 3,
+      "fornecedor": 4,
+      "quantidade": "7",
+      "quantidade_minima": "5",
+      "criado_em": "2026-11-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "estoque.itemestoque",
+    "pk": 4,
+    "fields": {
+      "nome": "Açúcar refinado",
+      "tipo": "insumo",
+      "unidade_medida": "kg",
+      "unidade": 3,
+      "fornecedor": 4,
+      "quantidade": "30",
+      "quantidade_minima": "15",
+      "criado_em": "2026-11-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "estoque.itemestoque",
+    "pk": 5,
+    "fields": {
+      "nome": "Sal",
+      "tipo": "insumo",
+      "unidade_medida": "kg",
+      "unidade": 3,
+      "fornecedor": 4,
+      "quantidade": "4",
+      "quantidade_minima": "5",
+      "criado_em": "2026-11-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "estoque.itemestoque",
+    "pk": 6,
+    "fields": {
+      "nome": "Manteiga",
+      "tipo": "insumo",
+      "unidade_medida": "kg",
+      "unidade": 3,
+      "fornecedor": 2,
+      "quantidade": "17.5",
+      "quantidade_minima": "10",
+      "criado_em": "2026-11-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "estoque.itemestoque",
+    "pk": 7,
+    "fields": {
+      "nome": "Ovos",
+      "tipo": "insumo",
+      "unidade_medida": "un",
+      "unidade": 3,
+      "fornecedor": 5,
+      "quantidade": "90",
+      "quantidade_minima": "120",
+      "criado_em": "2026-11-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "estoque.itemestoque",
+    "pk": 8,
+    "fields": {
+      "nome": "Leite integral",
+      "tipo": "insumo",
+      "unidade_medida": "L",
+      "unidade": 3,
+      "fornecedor": 2,
+      "quantidade": "26",
+      "quantidade_minima": "20",
+      "criado_em": "2026-11-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "estoque.itemestoque",
+    "pk": 9,
+    "fields": {
+      "nome": "Pão francês",
+      "tipo": "produto",
+      "unidade_medida": "un",
+      "unidade": 1,
+      "fornecedor": null,
+      "quantidade": "80",
+      "quantidade_minima": "100",
+      "criado_em": "2026-11-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "estoque.itemestoque",
+    "pk": 10,
+    "fields": {
+      "nome": "Pão de queijo",
+      "tipo": "produto",
+      "unidade_medida": "kg",
+      "unidade": 1,
+      "fornecedor": null,
+      "quantidade": "3.5",
+      "quantidade_minima": "2",
+      "criado_em": "2026-11-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "estoque.itemestoque",
+    "pk": 11,
+    "fields": {
+      "nome": "Bolo de cenoura",
+      "tipo": "produto",
+      "unidade_medida": "un",
+      "unidade": 1,
+      "fornecedor": null,
+      "quantidade": "2",
+      "quantidade_minima": "3",
+      "criado_em": "2026-11-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "estoque.itemestoque",
+    "pk": 12,
+    "fields": {
+      "nome": "Sacos de papel kraft",
+      "tipo": "insumo",
+      "unidade_medida": "pct",
+      "unidade": 1,
+      "fornecedor": 3,
+      "quantidade": "22",
+      "quantidade_minima": "10",
+      "criado_em": "2026-11-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "estoque.itemestoque",
+    "pk": 13,
+    "fields": {
+      "nome": "Pão francês",
+      "tipo": "produto",
+      "unidade_medida": "un",
+      "unidade": 2,
+      "fornecedor": null,
+      "quantidade": "150",
+      "quantidade_minima": "100",
+      "criado_em": "2026-11-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "estoque.itemestoque",
+    "pk": 14,
+    "fields": {
+      "nome": "Sacos de papel kraft",
+      "tipo": "insumo",
+      "unidade_medida": "pct",
+      "unidade": 2,
+      "fornecedor": 3,
+      "quantidade": "5",
+      "quantidade_minima": "10",
+      "criado_em": "2026-11-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "estoque.itemestoque",
+    "pk": 15,
+    "fields": {
+      "nome": "Caixas para bolo",
+      "tipo": "insumo",
+      "unidade_medida": "cx",
+      "unidade": 2,
+      "fornecedor": 3,
+      "quantidade": "10",
+      "quantidade_minima": "5",
+      "criado_em": "2026-11-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 1,
+    "fields": {
+      "item": 1,
+      "tipo": "entrada",
+      "quantidade": "200",
+      "saldo_apos": "200",
+      "data": "2026-11-03T9:00:00-03:00",
+      "observacao": "Estoque inicial"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 2,
+    "fields": {
+      "item": 1,
+      "tipo": "saida",
+      "quantidade": "60",
+      "saldo_apos": "140",
+      "data": "2026-11-05T10:00:00-03:00",
+      "observacao": "Produção da semana"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 3,
+    "fields": {
+      "item": 1,
+      "tipo": "saida",
+      "quantidade": "45",
+      "saldo_apos": "95",
+      "data": "2026-11-07T11:00:00-03:00",
+      "observacao": "Produção da semana"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 4,
+    "fields": {
+      "item": 2,
+      "tipo": "entrada",
+      "quantidade": "60",
+      "saldo_apos": "60",
+      "data": "2026-11-03T9:00:00-03:00",
+      "observacao": "Estoque inicial"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 5,
+    "fields": {
+      "item": 2,
+      "tipo": "saida",
+      "quantidade": "45",
+      "saldo_apos": "15",
+      "data": "2026-11-05T10:00:00-03:00",
+      "observacao": "Produção da semana"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 6,
+    "fields": {
+      "item": 3,
+      "tipo": "entrada",
+      "quantidade": "10",
+      "saldo_apos": "10",
+      "data": "2026-11-03T9:00:00-03:00",
+      "observacao": "Estoque inicial"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 7,
+    "fields": {
+      "item": 3,
+      "tipo": "saida",
+      "quantidade": "3",
+      "saldo_apos": "7",
+      "data": "2026-11-05T10:00:00-03:00",
+      "observacao": "Produção da semana"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 8,
+    "fields": {
+      "item": 4,
+      "tipo": "entrada",
+      "quantidade": "50",
+      "saldo_apos": "50",
+      "data": "2026-11-03T9:00:00-03:00",
+      "observacao": "Estoque inicial"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 9,
+    "fields": {
+      "item": 4,
+      "tipo": "saida",
+      "quantidade": "20",
+      "saldo_apos": "30",
+      "data": "2026-11-05T10:00:00-03:00",
+      "observacao": "Produção da semana"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 10,
+    "fields": {
+      "item": 5,
+      "tipo": "entrada",
+      "quantidade": "10",
+      "saldo_apos": "10",
+      "data": "2026-11-03T9:00:00-03:00",
+      "observacao": "Estoque inicial"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 11,
+    "fields": {
+      "item": 5,
+      "tipo": "saida",
+      "quantidade": "6",
+      "saldo_apos": "4",
+      "data": "2026-11-05T10:00:00-03:00",
+      "observacao": "Produção da semana"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 12,
+    "fields": {
+      "item": 6,
+      "tipo": "entrada",
+      "quantidade": "30",
+      "saldo_apos": "30",
+      "data": "2026-11-03T9:00:00-03:00",
+      "observacao": "Estoque inicial"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 13,
+    "fields": {
+      "item": 6,
+      "tipo": "saida",
+      "quantidade": "12.5",
+      "saldo_apos": "17.5",
+      "data": "2026-11-05T10:00:00-03:00",
+      "observacao": "Massas folhadas"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 14,
+    "fields": {
+      "item": 7,
+      "tipo": "entrada",
+      "quantidade": "360",
+      "saldo_apos": "360",
+      "data": "2026-11-03T9:00:00-03:00",
+      "observacao": "Estoque inicial"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 15,
+    "fields": {
+      "item": 7,
+      "tipo": "saida",
+      "quantidade": "270",
+      "saldo_apos": "90",
+      "data": "2026-11-05T10:00:00-03:00",
+      "observacao": "Produção da semana"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 16,
+    "fields": {
+      "item": 8,
+      "tipo": "entrada",
+      "quantidade": "40",
+      "saldo_apos": "40",
+      "data": "2026-11-03T9:00:00-03:00",
+      "observacao": "Estoque inicial"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 17,
+    "fields": {
+      "item": 8,
+      "tipo": "saida",
+      "quantidade": "14",
+      "saldo_apos": "26",
+      "data": "2026-11-05T10:00:00-03:00",
+      "observacao": "Produção da semana"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 18,
+    "fields": {
+      "item": 9,
+      "tipo": "entrada",
+      "quantidade": "400",
+      "saldo_apos": "400",
+      "data": "2026-11-03T9:00:00-03:00",
+      "observacao": "Fornada da manhã"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 19,
+    "fields": {
+      "item": 9,
+      "tipo": "saida",
+      "quantidade": "320",
+      "saldo_apos": "80",
+      "data": "2026-11-05T10:00:00-03:00",
+      "observacao": "Vendas do dia"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 20,
+    "fields": {
+      "item": 10,
+      "tipo": "entrada",
+      "quantidade": "6",
+      "saldo_apos": "6",
+      "data": "2026-11-03T9:00:00-03:00",
+      "observacao": "Fornada da manhã"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 21,
+    "fields": {
+      "item": 10,
+      "tipo": "saida",
+      "quantidade": "2.5",
+      "saldo_apos": "3.5",
+      "data": "2026-11-05T10:00:00-03:00",
+      "observacao": "Vendas do dia"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 22,
+    "fields": {
+      "item": 11,
+      "tipo": "entrada",
+      "quantidade": "8",
+      "saldo_apos": "8",
+      "data": "2026-11-03T9:00:00-03:00",
+      "observacao": "Produção do dia"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 23,
+    "fields": {
+      "item": 11,
+      "tipo": "saida",
+      "quantidade": "6",
+      "saldo_apos": "2",
+      "data": "2026-11-05T10:00:00-03:00",
+      "observacao": "Vendas do dia"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 24,
+    "fields": {
+      "item": 12,
+      "tipo": "entrada",
+      "quantidade": "30",
+      "saldo_apos": "30",
+      "data": "2026-11-03T9:00:00-03:00",
+      "observacao": "Estoque inicial"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 25,
+    "fields": {
+      "item": 12,
+      "tipo": "saida",
+      "quantidade": "8",
+      "saldo_apos": "22",
+      "data": "2026-11-05T10:00:00-03:00",
+      "observacao": "Uso no balcão"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 26,
+    "fields": {
+      "item": 13,
+      "tipo": "entrada",
+      "quantidade": "300",
+      "saldo_apos": "300",
+      "data": "2026-11-03T9:00:00-03:00",
+      "observacao": "Fornada da manhã"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 27,
+    "fields": {
+      "item": 13,
+      "tipo": "saida",
+      "quantidade": "150",
+      "saldo_apos": "150",
+      "data": "2026-11-05T10:00:00-03:00",
+      "observacao": "Vendas do dia"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 28,
+    "fields": {
+      "item": 14,
+      "tipo": "entrada",
+      "quantidade": "20",
+      "saldo_apos": "20",
+      "data": "2026-11-03T9:00:00-03:00",
+      "observacao": "Estoque inicial"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 29,
+    "fields": {
+      "item": 14,
+      "tipo": "saida",
+      "quantidade": "15",
+      "saldo_apos": "5",
+      "data": "2026-11-05T10:00:00-03:00",
+      "observacao": "Uso no balcão"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 30,
+    "fields": {
+      "item": 15,
+      "tipo": "entrada",
+      "quantidade": "12",
+      "saldo_apos": "12",
+      "data": "2026-11-03T9:00:00-03:00",
+      "observacao": "Estoque inicial"
+    }
+  },
+  {
+    "model": "estoque.movimentacao",
+    "pk": 31,
+    "fields": {
+      "item": 15,
+      "tipo": "saida",
+      "quantidade": "2",
+      "saldo_apos": "10",
+      "data": "2026-11-05T10:00:00-03:00",
+      "observacao": "Encomendas"
+    }
+  }
+]
