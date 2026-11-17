@@ -8,4 +8,6 @@ urlpatterns = [
     path('novo/', views.ItemCriarView.as_view(), name='estoque_criar'),
     path('<int:pk>/editar/', views.ItemEditarView.as_view(), name='estoque_editar'),
     path('<int:pk>/excluir/', views.ItemExcluirView.as_view(), name='estoque_excluir'),
+    path('<int:pk>/movimentar/', views.MovimentarView.as_view(), name='estoque_movimentar'),
+    path('movimentacoes/', views.MovimentacaoListaView.as_view(), name='estoque_movimentacoes'),
 ]
