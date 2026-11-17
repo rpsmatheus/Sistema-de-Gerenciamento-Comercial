@@ -8,6 +8,8 @@ Referência das rotas do sistema. Ao implementar um módulo, siga os caminhos e 
 
 Todas as rotas, exceto `/login/`, exigem usuário autenticado.
 
+A listagem de estoque aceita os filtros `unidade`, `tipo` e `baixo=1`, e o histórico de movimentações aceita `item`, `tipo`, `de` e `ate`, com datas no formato AAAA-MM-DD.
+
 ## Acesso e visão geral (app `core`)
 
 | Rota | Nome | Página | Situação |
@@ -68,12 +70,12 @@ Unidades, clientes, fornecedores e funcionários seguem o mesmo padrão de quatr
 
 | Rota | Nome | Página | Situação |
 | --- | --- | --- | --- |
-| `/estoque/` | `estoque_lista` | Itens em estoque, com alerta de estoque baixo | Sprint 4 |
-| `/estoque/novo/` | `estoque_criar` | Cadastro de produto ou insumo | Sprint 4 |
-| `/estoque/<id>/editar/` | `estoque_editar` | Edição de item | Sprint 4 |
-| `/estoque/<id>/excluir/` | `estoque_excluir` | Confirmação de exclusão | Sprint 4 |
-| `/estoque/<id>/movimentar/` | `estoque_movimentar` | Registro de entrada ou saída | Sprint 4 |
-| `/estoque/movimentacoes/` | `estoque_movimentacoes` | Histórico de movimentações | Sprint 4 |
+| `/estoque/` | `estoque_lista` | Itens em estoque, com alerta de estoque baixo | Feito |
+| `/estoque/novo/` | `estoque_criar` | Cadastro de produto ou insumo | Feito |
+| `/estoque/<id>/editar/` | `estoque_editar` | Edição de item | Feito |
+| `/estoque/<id>/excluir/` | `estoque_excluir` | Confirmação de exclusão | Feito |
+| `/estoque/<id>/movimentar/` | `estoque_movimentar` | Registro de entrada ou saída | Feito |
+| `/estoque/movimentacoes/` | `estoque_movimentacoes` | Histórico de movimentações | Feito |
 
 ## Faturamento (app `faturamento`)
 

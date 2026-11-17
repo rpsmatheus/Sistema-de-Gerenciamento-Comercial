@@ -37,8 +37,8 @@ MODULOS = [
         'nome': 'Estoque',
         'descricao': 'Produtos, insumos, entradas e saídas.',
         'sprint': 4,
-        'disponivel': False,
-        'url_name': '',
+        'disponivel': True,
+        'url_name': 'estoque_lista',
     },
     {
         'nome': 'Faturamento',

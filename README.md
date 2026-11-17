@@ -313,7 +313,7 @@ Acesse `http://127.0.0.1:8000/`.
 - [x] Clientes
 - [ ] Fornecedores
 - [ ] Funcionários
-- [ ] Estoque
+- [x] Estoque
 - [ ] Faturamento
 - [ ] Manutenção
 - [ ] Testes automatizados
