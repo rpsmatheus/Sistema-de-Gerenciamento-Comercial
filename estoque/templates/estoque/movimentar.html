@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load estoque_tags %}
+
+{% block titulo %}Movimentar {{ item.nome }}{% endblock %}
+
+{% block conteudo %}
+    <h1 class="text-2xl font-bold text-stone-900">Entrada ou saída</h1>
+
+    {# Resumo do item, para quem registra saber o saldo antes de decidir. #}
+    <div class="cartao-modulo mt-6 max-w-xl">
+        <div class="flex items-start justify-between gap-2">
+            <div>
+                <h2 class="text-lg font-semibold text-stone-900">{{ item.nome }}</h2>
+                <p class="text-sm text-stone-600">{{ item.unidade.nome }} · {{ item.get_tipo_display }}</p>
+            </div>
+            {% if item.estoque_baixo %}
+                <span class="etiqueta etiqueta-inativo">Estoque baixo</span>
+            {% else %}
+                <span class="etiqueta etiqueta-disponivel">OK</span>
+            {% endif %}
+        </div>
+        <p class="mt-3 text-stone-800">
+            Saldo atual: <strong>{{ item.quantidade|quantidade }} {{ item.unidade_medida }}</strong>
+            <span class="text-sm text-stone-500">(mínimo {{ item.quantidade_minima|quantidade }})</span>
+        </p>
+    </div>
+
+    <form method="post" class="formulario mt-6" novalidate>
+        {% include 'partials/formulario.html' %}
+
+        <div class="acoes">
+            <button type="submit" class="botao botao-primario">Registrar</button>
+            <a href="{% url 'estoque_lista' %}" class="botao botao-secundario">Cancelar</a>
+        </div>
+    </form>
+{% endblock %}
