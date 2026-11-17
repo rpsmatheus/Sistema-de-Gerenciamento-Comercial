@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load estoque_tags %}
+
+{% block titulo %}Histórico de movimentações{% endblock %}
+
+{% block conteudo %}
+    <div class="flex flex-wrap items-center justify-between gap-3">
+        <div>
+            <h1 class="text-2xl font-bold text-stone-900">Histórico de movimentações</h1>
+            <p class="mt-1 text-stone-600">Todas as entradas e saídas, das mais recentes para as mais antigas.</p>
+        </div>
+        <a href="{% url 'estoque_lista' %}" class="botao botao-secundario">← Voltar ao estoque</a>
+    </div>
+
+    <form method="get" class="barra-busca mt-6" role="search">
+        <input type="search" name="q" value="{{ q }}"
+               placeholder="Buscar por item ou observação" aria-label="Buscar por item ou observação">
+
+        <select name="item" aria-label="Filtrar por item">
+            <option value="">Todos os itens</option>
+            {% for opcao in itens %}
+                <option value="{{ opcao.pk }}" {% if item_selecionado == opcao.pk|stringformat:'s' %}selected{% endif %}>
+                    {{ opcao }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <select name="tipo" aria-label="Filtrar por tipo">
+            <option value="">Entradas e saídas</option>
+            {% for valor, rotulo in tipos %}
+                <option value="{{ valor }}" {% if tipo_selecionado == valor %}selected{% endif %}>{{ rotulo }}</option>
+            {% endfor %}
+        </select>
+
+        <label class="flex items-center gap-2 text-sm text-stone-700">
+            De <input type="date" name="de" value="{{ de }}">
+        </label>
+        <label class="flex items-center gap-2 text-sm text-stone-700">
+            até <input type="date" name="ate" value="{{ ate }}">
+        </label>
+
+        <button type="submit" class="botao botao-secundario">Filtrar</button>
+        {% if filtrando %}
+            <a href="{% url 'estoque_movimentacoes' %}" class="link-acao">Limpar</a>
+        {% endif %}
+    </form>
+
+    <div class="mt-4">
+        {% if movimentacoes %}
+            <div class="tabela-container">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Item</th>
+                            <th>Tipo</th>
+                            <th>Quantidade</th>
+                            <th>Saldo após</th>
+                            <th>Observação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for movimentacao in movimentacoes %}
+                            <tr>
+                                <td class="whitespace-nowrap">{{ movimentacao.data|date:'d/m/Y H:i' }}</td>
+                                <td>
+                                    <span class="font-medium text-stone-900">{{ movimentacao.item.nome }}</span>
+                                    <span class="texto-secundario">{{ movimentacao.item.unidade.nome }}</span>
+                                </td>
+                                <td>
+                                    {% if movimentacao.eh_entrada %}
+                                        <span class="etiqueta etiqueta-disponivel">Entrada</span>
+                                    {% else %}
+                                        <span class="etiqueta etiqueta-inativo">Saída</span>
+                                    {% endif %}
+                                </td>
+                                <td class="whitespace-nowrap">
+                                    {% if movimentacao.eh_entrada %}+{% else %}−{% endif %}{{ movimentacao.quantidade|quantidade }} {{ movimentacao.item.unidade_medida }}
+                                </td>
+                                <td class="whitespace-nowrap">{{ movimentacao.saldo_apos|quantidade }} {{ movimentacao.item.unidade_medida }}</td>
+                                <td>{{ movimentacao.observacao|default:'—' }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            {% include 'partials/paginacao.html' %}
+        {% elif filtrando %}
+            <div class="lista-vazia">
+                Nenhuma movimentação encontrada com estes filtros.
+                <a href="{% url 'estoque_movimentacoes' %}" class="link-acao">Limpar filtros</a>
+            </div>
+        {% else %}
+            <div class="lista-vazia">
+                Nenhuma movimentação registrada ainda. Use o link "Movimentar" na lista do estoque.
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

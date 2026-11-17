@@ -10,6 +10,7 @@
             <p class="mt-1 text-stone-600">Produtos e insumos de cada unidade.</p>
         </div>
         <div class="flex flex-wrap gap-2">
+            <a href="{% url 'estoque_movimentacoes' %}" class="botao botao-secundario">Histórico de movimentações</a>
             <a href="{% url 'estoque_criar' %}" class="botao botao-primario">+ Novo item</a>
         </div>
     </div>
@@ -90,6 +91,8 @@
                                     {% endif %}
                                 </td>
                                 <td class="coluna-acoes">
+                                    <a href="{% url 'estoque_movimentar' item.pk %}" class="link-acao">Movimentar</a>
+                                    <a href="{% url 'estoque_movimentacoes' %}?item={{ item.pk }}" class="link-acao">Histórico</a>
                                     <a href="{% url 'estoque_editar' item.pk %}" class="link-acao">Editar</a>
                                     <a href="{% url 'estoque_excluir' item.pk %}" class="link-acao link-acao-perigo">Excluir</a>
                                 </td>
