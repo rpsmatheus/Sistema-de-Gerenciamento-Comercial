@@ -293,3 +293,55 @@
     display: block;
     font-size: 0.75rem;
 }
+
+/* ------------------------------------------------------------------ */
+/* Faturamento e manutenção (Sprint 5)                                 */
+/* ------------------------------------------------------------------ */
+
+/* Etiquetas de status de manutenção */
+.etiqueta-pendente {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.etiqueta-andamento {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+/* Cartões de totais acima das tabelas */
+.cartoes-totais {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+
+.cartao-total {
+    background-color: #ffffff;
+    border: 1px solid #e7e5e4;
+    border-radius: 0.75rem;
+    padding: 1rem 1.25rem;
+}
+
+.cartao-total .rotulo {
+    color: #78716c;
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.cartao-total .valor {
+    color: #1c1917;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0.25rem;
+}
+
+/* Valores em dinheiro alinhados à direita nas tabelas */
+.tabela .coluna-valor {
+    text-align: right;
+    white-space: nowrap;
+}

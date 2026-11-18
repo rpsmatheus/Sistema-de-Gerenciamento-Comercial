@@ -1,9 +1,13 @@
+from decimal import Decimal
+
 from django.contrib.auth import get_user_model
-from django.test import RequestFactory, TestCase
+from django.template import Context, Template
+from django.test import RequestFactory, SimpleTestCase, TestCase
 from django.urls import reverse
 from django.views.generic import ListView
 
 from core.mixins import BuscaMixin
+from core.templatetags.core_tags import formatar_moeda
 
 
 class AutenticacaoTests(TestCase):
@@ -142,3 +146,16 @@ class BuscaMixinTests(TestCase):
         self.assertIn('q=a', querystring)
         self.assertIn('situacao=ativo', querystring)
         self.assertNotIn('page', querystring)
+
+
+class MoedaTests(SimpleTestCase):
+    def test_formata_em_reais(self):
+        self.assertEqual(formatar_moeda(Decimal('1234.5')), 'R$ 1.234,50')
+        self.assertEqual(formatar_moeda(Decimal('0')), 'R$ 0,00')
+        self.assertEqual(formatar_moeda(Decimal('1234567.891')), 'R$ 1.234.567,89')
+        self.assertEqual(formatar_moeda(Decimal('-80')), '-R$ 80,00')
+
+    def test_filtro_de_template(self):
+        template = Template('{% load core_tags %}{{ valor|moeda }}')
+        self.assertEqual(template.render(Context({'valor': Decimal('350')})), 'R$ 350,00')
+        self.assertEqual(template.render(Context({'valor': None})), '')
