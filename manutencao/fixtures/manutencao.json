@@ -1,0 +1,252 @@
+[
+  {
+    "model": "manutencao.equipamento",
+    "pk": 1,
+    "fields": {
+      "nome": "Forno de lastro a gás",
+      "unidade": 3,
+      "marca_modelo": "Lastro 6 esteiras",
+      "data_aquisicao": "2021-03-10",
+      "observacoes": "Forno principal da produção.",
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.equipamento",
+    "pk": 2,
+    "fields": {
+      "nome": "Masseira espiral 25 kg",
+      "unidade": 3,
+      "marca_modelo": "",
+      "data_aquisicao": "2021-03-10",
+      "observacoes": "Limpar a cuba ao fim de cada turno.",
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.equipamento",
+    "pk": 3,
+    "fields": {
+      "nome": "Câmara fria",
+      "unidade": 3,
+      "marca_modelo": "",
+      "data_aquisicao": "2022-06-01",
+      "observacoes": "Temperatura de trabalho entre 2 °C e 4 °C.",
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.equipamento",
+    "pk": 4,
+    "fields": {
+      "nome": "Modeladora de pães",
+      "unidade": 3,
+      "marca_modelo": "",
+      "data_aquisicao": "2023-02-15",
+      "observacoes": "",
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.equipamento",
+    "pk": 5,
+    "fields": {
+      "nome": "Forno turbo elétrico",
+      "unidade": 1,
+      "marca_modelo": "5 esteiras",
+      "data_aquisicao": "2022-09-20",
+      "observacoes": "",
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.equipamento",
+    "pk": 6,
+    "fields": {
+      "nome": "Vitrine refrigerada",
+      "unidade": 1,
+      "marca_modelo": "",
+      "data_aquisicao": "2023-05-08",
+      "observacoes": "",
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.equipamento",
+    "pk": 7,
+    "fields": {
+      "nome": "Forno turbo elétrico",
+      "unidade": 2,
+      "marca_modelo": "5 esteiras",
+      "data_aquisicao": "2024-01-22",
+      "observacoes": "",
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.equipamento",
+    "pk": 8,
+    "fields": {
+      "nome": "Máquina de café espresso",
+      "unidade": 2,
+      "marca_modelo": "Duas saídas",
+      "data_aquisicao": "2024-01-22",
+      "observacoes": "",
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.manutencao",
+    "pk": 1,
+    "fields": {
+      "equipamento": 1,
+      "tipo": "preventiva",
+      "descricao": "Limpeza dos queimadores e regulagem da chama",
+      "data": "2026-09-15",
+      "custo": "350.00",
+      "status": "concluida",
+      "fornecedor": 6,
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.manutencao",
+    "pk": 2,
+    "fields": {
+      "equipamento": 1,
+      "tipo": "corretiva",
+      "descricao": "Troca do termostato",
+      "data": "2026-10-20",
+      "custo": "480.00",
+      "status": "concluida",
+      "fornecedor": 6,
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.manutencao",
+    "pk": 3,
+    "fields": {
+      "equipamento": 1,
+      "tipo": "preventiva",
+      "descricao": "Revisão trimestral",
+      "data": "2026-12-15",
+      "custo": "0",
+      "status": "pendente",
+      "fornecedor": 6,
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.manutencao",
+    "pk": 4,
+    "fields": {
+      "equipamento": 2,
+      "tipo": "corretiva",
+      "descricao": "Troca da correia do motor",
+      "data": "2026-11-10",
+      "custo": "220.00",
+      "status": "em_andamento",
+      "fornecedor": 6,
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.manutencao",
+    "pk": 5,
+    "fields": {
+      "equipamento": 3,
+      "tipo": "preventiva",
+      "descricao": "Limpeza do condensador e verificação do gás",
+      "data": "2026-10-05",
+      "custo": "300.00",
+      "status": "concluida",
+      "fornecedor": 6,
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.manutencao",
+    "pk": 6,
+    "fields": {
+      "equipamento": 3,
+      "tipo": "corretiva",
+      "descricao": "Porta não veda: troca da borracha",
+      "data": "2026-11-12",
+      "custo": "0",
+      "status": "pendente",
+      "fornecedor": null,
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.manutencao",
+    "pk": 7,
+    "fields": {
+      "equipamento": 4,
+      "tipo": "preventiva",
+      "descricao": "Lubrificação dos rolos",
+      "data": "2026-08-30",
+      "custo": "0",
+      "status": "concluida",
+      "fornecedor": null,
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.manutencao",
+    "pk": 8,
+    "fields": {
+      "equipamento": 5,
+      "tipo": "corretiva",
+      "descricao": "Resistência queimada",
+      "data": "2026-11-04",
+      "custo": "390.00",
+      "status": "concluida",
+      "fornecedor": 6,
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.manutencao",
+    "pk": 9,
+    "fields": {
+      "equipamento": 6,
+      "tipo": "preventiva",
+      "descricao": "Limpeza e troca do filtro",
+      "data": "2026-10-18",
+      "custo": "120.00",
+      "status": "concluida",
+      "fornecedor": null,
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.manutencao",
+    "pk": 10,
+    "fields": {
+      "equipamento": 7,
+      "tipo": "preventiva",
+      "descricao": "Revisão semestral",
+      "data": "2026-11-14",
+      "custo": "0",
+      "status": "em_andamento",
+      "fornecedor": 6,
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "manutencao.manutencao",
+    "pk": 11,
+    "fields": {
+      "equipamento": 8,
+      "tipo": "corretiva",
+      "descricao": "Vazamento no grupo de extração",
+      "data": "2026-11-13",
+      "custo": "0",
+      "status": "pendente",
+      "fornecedor": null,
+      "criado_em": "2026-11-01T12:00:00Z"
+    }
+  }
+]
