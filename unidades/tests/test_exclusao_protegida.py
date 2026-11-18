@@ -6,6 +6,7 @@ from django.urls import reverse
 
 from estoque.models import ItemEstoque
 from funcionarios.models import Funcionario
+from manutencao.models import Equipamento
 from unidades.models import Unidade
 
 
@@ -39,7 +40,7 @@ class ExclusaoDeUnidadeComFuncionariosTests(TestCase):
         )
         self.assertRedirects(resposta, reverse('unidades_lista'))
         self.assertEqual(Unidade.objects.count(), 1)
-        self.assertContains(resposta, 'não pode ser removida porque tem funcionários ou itens de estoque vinculados')
+        self.assertContains(resposta, 'não pode ser removida porque tem funcionários vinculados')
         self.assertNotContains(resposta, 'Unidade removida com sucesso.')
 
     def test_unidade_com_itens_de_estoque_nao_e_removida(self):
@@ -51,4 +52,19 @@ class ExclusaoDeUnidadeComFuncionariosTests(TestCase):
             follow=True,
         )
         self.assertEqual(Unidade.objects.count(), 1)
-        self.assertContains(resposta, 'itens de estoque vinculados')
+        self.assertContains(resposta, 'porque tem itens de estoque vinculados')
+
+    def test_aviso_lista_todos_os_registros_que_impedem(self):
+        Funcionario.objects.create(
+            nome='João Silva',
+            unidade=self.unidade,
+            cargo=Funcionario.Cargo.PADEIRO,
+            data_admissao=date(2025, 3, 1),
+        )
+        Equipamento.objects.create(nome='Forno turbo', unidade=self.unidade)
+        resposta = self.client.post(
+            reverse('unidades_excluir', args=[self.unidade.pk]),
+            follow=True,
+        )
+        self.assertEqual(Unidade.objects.count(), 1)
+        self.assertContains(resposta, 'porque tem equipamentos e funcionários vinculados')

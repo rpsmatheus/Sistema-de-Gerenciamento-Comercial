@@ -11,6 +11,14 @@ from core.mixins import BuscaMixin
 from .forms import UnidadeForm
 from .models import Unidade
 
+
+def juntar(palavras):
+    """Junta uma lista em português: ['a', 'b', 'c'] vira 'a, b e c'."""
+    if len(palavras) <= 1:
+        return ''.join(palavras)
+    return ', '.join(palavras[:-1]) + ' e ' + palavras[-1]
+
+
 # Todas as views herdam de LoginRequiredMixin: quem não está autenticado
 # é redirecionado para a tela de login.
 
@@ -55,16 +63,22 @@ class UnidadeExcluirView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     extra_context = {'url_cancelar': reverse_lazy('unidades_lista')}
 
     def form_valid(self, form):
-        # Uma unidade com funcionários ou itens de estoque vinculados não
-        # pode ser removida (os dois models usam on_delete=PROTECT). Em vez de mostrar
-        # uma página de erro, o sistema volta para a listagem com um aviso.
+        # Uma unidade com registros ligados a ela (funcionários, itens de
+        # estoque, lançamentos de faturamento, equipamentos) não pode ser
+        # removida: esses models usam on_delete=PROTECT. Em vez de mostrar
+        # uma página de erro, o sistema volta para a listagem com um aviso
+        # que diz quais registros impedem a exclusão.
         try:
             return super().form_valid(form)
-        except ProtectedError:
+        except ProtectedError as erro:
+            vinculos = sorted({
+                str(registro._meta.verbose_name_plural)
+                for registro in erro.protected_objects
+            })
             messages.error(
                 self.request,
                 f'A unidade "{self.object}" não pode ser removida porque tem '
-                'funcionários ou itens de estoque vinculados. Transfira ou remova '
-                'esses registros antes.',
+                f'{juntar(vinculos)} vinculados. Transfira ou remova esses '
+                'registros antes.',
             )
             return redirect('unidades_lista')
