@@ -1,0 +1,266 @@
+[
+  {
+    "model": "faturamento.lancamento",
+    "pk": 1,
+    "fields": {
+      "unidade": 1,
+      "data": "2026-10-04",
+      "valor": "8760.50",
+      "descricao": "Vendas do balcão — semana de 28/09 a 04/10",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 2,
+    "fields": {
+      "unidade": 2,
+      "data": "2026-10-04",
+      "valor": "6139.60",
+      "descricao": "Vendas do balcão — semana de 28/09 a 04/10",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 3,
+    "fields": {
+      "unidade": 3,
+      "data": "2026-10-04",
+      "valor": "5620.90",
+      "descricao": "Vendas para clientes de atacado — semana de 28/09 a 04/10",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 4,
+    "fields": {
+      "unidade": 1,
+      "data": "2026-10-11",
+      "valor": "8269.60",
+      "descricao": "Vendas do balcão — semana de 05/10 a 11/10",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 5,
+    "fields": {
+      "unidade": 2,
+      "data": "2026-10-11",
+      "valor": "6740.90",
+      "descricao": "Vendas do balcão — semana de 05/10 a 11/10",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 6,
+    "fields": {
+      "unidade": 3,
+      "data": "2026-10-11",
+      "valor": "5295.30",
+      "descricao": "Vendas para clientes de atacado — semana de 05/10 a 11/10",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 7,
+    "fields": {
+      "unidade": 1,
+      "data": "2026-10-18",
+      "valor": "8870.90",
+      "descricao": "Vendas do balcão — semana de 12/10 a 18/10",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 8,
+    "fields": {
+      "unidade": 2,
+      "data": "2026-10-18",
+      "valor": "6415.30",
+      "descricao": "Vendas do balcão — semana de 12/10 a 18/10",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 9,
+    "fields": {
+      "unidade": 3,
+      "data": "2026-10-18",
+      "valor": "5140.00",
+      "descricao": "Vendas para clientes de atacado — semana de 12/10 a 18/10",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 10,
+    "fields": {
+      "unidade": 1,
+      "data": "2026-10-25",
+      "valor": "8545.30",
+      "descricao": "Vendas do balcão — semana de 19/10 a 25/10",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 11,
+    "fields": {
+      "unidade": 2,
+      "data": "2026-10-25",
+      "valor": "6260.00",
+      "descricao": "Vendas do balcão — semana de 19/10 a 25/10",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 12,
+    "fields": {
+      "unidade": 3,
+      "data": "2026-10-25",
+      "valor": "5475.80",
+      "descricao": "Vendas para clientes de atacado — semana de 19/10 a 25/10",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 13,
+    "fields": {
+      "unidade": 1,
+      "data": "2026-11-01",
+      "valor": "8390.00",
+      "descricao": "Vendas do balcão — semana de 26/10 a 01/11",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 14,
+    "fields": {
+      "unidade": 2,
+      "data": "2026-11-01",
+      "valor": "6595.80",
+      "descricao": "Vendas do balcão — semana de 26/10 a 01/11",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 15,
+    "fields": {
+      "unidade": 3,
+      "data": "2026-11-01",
+      "valor": "5200",
+      "descricao": "Vendas para clientes de atacado — semana de 26/10 a 01/11",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 16,
+    "fields": {
+      "unidade": 1,
+      "data": "2026-11-08",
+      "valor": "8725.80",
+      "descricao": "Vendas do balcão — semana de 02/11 a 08/11",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 17,
+    "fields": {
+      "unidade": 2,
+      "data": "2026-11-08",
+      "valor": "6320",
+      "descricao": "Vendas do balcão — semana de 02/11 a 08/11",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 18,
+    "fields": {
+      "unidade": 3,
+      "data": "2026-11-08",
+      "valor": "5510.50",
+      "descricao": "Vendas para clientes de atacado — semana de 02/11 a 08/11",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 19,
+    "fields": {
+      "unidade": 1,
+      "data": "2026-11-15",
+      "valor": "8450",
+      "descricao": "Vendas do balcão — semana de 09/11 a 15/11",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 20,
+    "fields": {
+      "unidade": 2,
+      "data": "2026-11-15",
+      "valor": "6630.50",
+      "descricao": "Vendas do balcão — semana de 09/11 a 15/11",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 21,
+    "fields": {
+      "unidade": 3,
+      "data": "2026-11-15",
+      "valor": "5019.60",
+      "descricao": "Vendas para clientes de atacado — semana de 09/11 a 15/11",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 22,
+    "fields": {
+      "unidade": 1,
+      "data": "2026-10-30",
+      "valor": "1850.00",
+      "descricao": "Encomenda: coffee break do Hotel Bela Vista",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 23,
+    "fields": {
+      "unidade": 3,
+      "data": "2026-11-06",
+      "valor": "2400.00",
+      "descricao": "Encomenda: pães para a Cantina Universitária",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "faturamento.lancamento",
+    "pk": 24,
+    "fields": {
+      "unidade": 2,
+      "data": "2026-11-12",
+      "valor": "960.00",
+      "descricao": "Encomenda: bolos para festa",
+      "criado_em": "2026-11-15T12:00:00Z"
+    }
+  }
+]
