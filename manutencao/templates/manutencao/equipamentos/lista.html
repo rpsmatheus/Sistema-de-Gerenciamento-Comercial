@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Equipamentos{% endblock %}
+
+{% block conteudo %}
+    <div class="flex flex-wrap items-center justify-between gap-3">
+        <div>
+            <h1 class="text-2xl font-bold text-stone-900">Equipamentos</h1>
+            <p class="mt-1 text-stone-600">Fornos, masseiras, câmaras frias e demais equipamentos das unidades.</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <a href="{% url 'equipamentos_criar' %}" class="botao botao-primario">+ Novo equipamento</a>
+        </div>
+    </div>
+
+    <form method="get" class="barra-busca mt-6" role="search">
+        <input type="search" name="q" value="{{ q }}"
+               placeholder="Buscar por nome, marca ou modelo" aria-label="Buscar por nome, marca ou modelo">
+
+        <select name="unidade" aria-label="Filtrar por unidade">
+            <option value="">Todas as unidades</option>
+            {% for unidade in unidades %}
+                <option value="{{ unidade.pk }}" {% if unidade_selecionada == unidade.pk|stringformat:'s' %}selected{% endif %}>
+                    {{ unidade.nome }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <button type="submit" class="botao botao-secundario">Filtrar</button>
+        {% if filtrando %}
+            <a href="{% url 'equipamentos_lista' %}" class="link-acao">Limpar</a>
+        {% endif %}
+    </form>
+
+    <div class="mt-4">
+        {% if equipamentos %}
+            <div class="tabela-container">
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th>Equipamento</th>
+                            <th>Unidade</th>
+                            <th>Aquisição</th>
+                            <th>Manutenções</th>
+                            <th class="coluna-acoes">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for equipamento in equipamentos %}
+                            <tr>
+                                <td>
+                                    <span class="font-medium text-stone-900">{{ equipamento.nome }}</span>
+                                    {% if equipamento.marca_modelo %}
+                                        <span class="texto-secundario">{{ equipamento.marca_modelo }}</span>
+                                    {% endif %}
+                                </td>
+                                <td>{{ equipamento.unidade.nome }}</td>
+                                <td class="whitespace-nowrap">{{ equipamento.data_aquisicao|date:'d/m/Y'|default:'—' }}</td>
+                                <td>
+                                    {% if equipamento.em_aberto %}
+                                        <span class="etiqueta etiqueta-pendente">{{ equipamento.em_aberto }} em aberto</span>
+                                    {% else %}
+                                        <span class="etiqueta etiqueta-disponivel">Em dia</span>
+                                    {% endif %}
+                                </td>
+                                <td class="coluna-acoes">
+                                    <a href="{% url 'equipamentos_editar' equipamento.pk %}" class="link-acao">Editar</a>
+                                    <a href="{% url 'equipamentos_excluir' equipamento.pk %}" class="link-acao link-acao-perigo">Excluir</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            {% include 'partials/paginacao.html' %}
+        {% elif filtrando %}
+            <div class="lista-vazia">
+                Nenhum equipamento encontrado com estes filtros.
+                <a href="{% url 'equipamentos_lista' %}" class="link-acao">Limpar filtros</a>
+            </div>
+        {% elif not unidades %}
+            <div class="lista-vazia">
+                Para cadastrar equipamentos, cadastre antes uma unidade.
+                <a href="{% url 'unidades_criar' %}" class="link-acao">Cadastrar unidade</a>
+            </div>
+        {% else %}
+            <div class="lista-vazia">
+                Nenhum equipamento cadastrado ainda.
+                <a href="{% url 'equipamentos_criar' %}" class="link-acao">Cadastrar o primeiro</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
