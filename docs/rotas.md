@@ -10,6 +10,8 @@ Todas as rotas, exceto `/login/`, exigem usuário autenticado.
 
 A listagem de estoque aceita os filtros `unidade`, `tipo` e `baixo=1`, e o histórico de movimentações aceita `item`, `tipo`, `de` e `ate`, com datas no formato AAAA-MM-DD.
 
+O faturamento aceita os filtros `unidade`, `de` e `ate`. As manutenções aceitam `equipamento`, `unidade`, `status` (incluindo `aberta`, para pendentes e em andamento), `tipo`, `de` e `ate`. A lista de equipamentos aceita `unidade`.
+
 ## Acesso e visão geral (app `core`)
 
 | Rota | Nome | Página | Situação |
@@ -81,10 +83,10 @@ Unidades, clientes, fornecedores e funcionários seguem o mesmo padrão de quatr
 
 | Rota | Nome | Página | Situação |
 | --- | --- | --- | --- |
-| `/faturamento/` | `faturamento_lista` | Lançamentos, com filtro por unidade e período | Sprint 5 |
-| `/faturamento/novo/` | `faturamento_criar` | Novo lançamento | Sprint 5 |
-| `/faturamento/<id>/editar/` | `faturamento_editar` | Edição de lançamento | Sprint 5 |
-| `/faturamento/<id>/excluir/` | `faturamento_excluir` | Confirmação de exclusão | Sprint 5 |
+| `/faturamento/` | `faturamento_lista` | Lançamentos, com filtro por unidade e período | Feito |
+| `/faturamento/novo/` | `faturamento_criar` | Novo lançamento | Feito |
+| `/faturamento/<id>/editar/` | `faturamento_editar` | Edição de lançamento | Feito |
+| `/faturamento/<id>/excluir/` | `faturamento_excluir` | Confirmação de exclusão | Feito |
 
 ## Manutenção (app `manutencao`)
 
