@@ -44,15 +44,15 @@ MODULOS = [
         'nome': 'Faturamento',
         'descricao': 'Lançamentos de faturamento por unidade.',
         'sprint': 5,
-        'disponivel': False,
-        'url_name': '',
+        'disponivel': True,
+        'url_name': 'faturamento_lista',
     },
     {
         'nome': 'Manutenção',
         'descricao': 'Equipamentos e histórico de manutenções.',
         'sprint': 5,
-        'disponivel': False,
-        'url_name': '',
+        'disponivel': True,
+        'url_name': 'manutencao_lista',
     },
 ]
 

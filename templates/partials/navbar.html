@@ -45,7 +45,16 @@
                         Estoque
                     </a>
                 </li>
-                {# Os links dos próximos módulos entram aqui conforme forem implementados #}
+                <li>
+                    <a href="{% url 'faturamento_lista' %}" class="block rounded px-3 py-2 hover:bg-amber-700">
+                        Faturamento
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'manutencao_lista' %}" class="block rounded px-3 py-2 hover:bg-amber-700">
+                        Manutenção
+                    </a>
+                </li>
 
                 <li class="px-3 py-2 text-sm text-amber-200 md:border-l md:border-amber-700 md:pl-4">
                     Olá, {{ user.get_username }}
