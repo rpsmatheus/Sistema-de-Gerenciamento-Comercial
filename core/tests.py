@@ -85,6 +85,16 @@ class DashboardTests(TestCase):
         self.assertContains(resposta, 'Olá, gerente')
         self.assertContains(resposta, 'Sair')
 
+    def test_faturamento_e_manutencao_tem_link_no_dashboard_e_no_menu(self):
+        resposta = self.client.get(reverse('dashboard'))
+        self.assertContains(resposta, f'href="{reverse("faturamento_lista")}"', count=2)
+        self.assertContains(resposta, f'href="{reverse("manutencao_lista")}"', count=2)
+
+    def test_todos_os_modulos_estao_disponiveis(self):
+        resposta = self.client.get(reverse('dashboard'))
+        self.assertContains(resposta, 'Disponível', count=7)
+        self.assertNotContains(resposta, 'Em desenvolvimento')
+
     def test_estoque_tem_link_no_dashboard_e_no_menu(self):
         resposta = self.client.get(reverse('dashboard'))
         self.assertContains(resposta, f'href="{reverse("estoque_lista")}"', count=2)
