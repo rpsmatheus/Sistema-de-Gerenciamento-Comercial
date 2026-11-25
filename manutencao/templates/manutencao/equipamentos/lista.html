@@ -9,6 +9,7 @@
             <p class="mt-1 text-stone-600">Fornos, masseiras, câmaras frias e demais equipamentos das unidades.</p>
         </div>
         <div class="flex flex-wrap gap-2">
+            <a href="{% url 'manutencao_lista' %}" class="botao botao-secundario">Ver manutenções</a>
             <a href="{% url 'equipamentos_criar' %}" class="botao botao-primario">+ Novo equipamento</a>
         </div>
     </div>
@@ -58,12 +59,15 @@
                                 <td class="whitespace-nowrap">{{ equipamento.data_aquisicao|date:'d/m/Y'|default:'—' }}</td>
                                 <td>
                                     {% if equipamento.em_aberto %}
-                                        <span class="etiqueta etiqueta-pendente">{{ equipamento.em_aberto }} em aberto</span>
+                                        <a href="{% url 'manutencao_lista' %}?equipamento={{ equipamento.pk }}&amp;status=aberta"
+                                           class="etiqueta etiqueta-pendente">{{ equipamento.em_aberto }} em aberto</a>
                                     {% else %}
                                         <span class="etiqueta etiqueta-disponivel">Em dia</span>
                                     {% endif %}
                                 </td>
                                 <td class="coluna-acoes">
+                                    <a href="{% url 'manutencao_criar' %}?equipamento={{ equipamento.pk }}" class="link-acao">+ Manutenção</a>
+                                    <a href="{% url 'manutencao_lista' %}?equipamento={{ equipamento.pk }}" class="link-acao">Histórico</a>
                                     <a href="{% url 'equipamentos_editar' equipamento.pk %}" class="link-acao">Editar</a>
                                     <a href="{% url 'equipamentos_excluir' equipamento.pk %}" class="link-acao link-acao-perigo">Excluir</a>
                                 </td>
